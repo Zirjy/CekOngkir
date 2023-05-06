@@ -2,21 +2,21 @@
 
 namespace Database\Seeders;
 
-use App\Models\Couriers;
+use App\Models\Courier;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class CouriersSeeder extends Seeder
+class CourierSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Couriers::insert([
+        Courier::insert([
             [
                 'code' => 'jne',
-                'title' => 'Jalur Nugraha Ekakulir (jne)',
+                'title' => 'Jalur Nugraha Ekakurir (JNE)',
             ],
             [
                 'code' => 'pos',
@@ -24,8 +24,8 @@ class CouriersSeeder extends Seeder
             ],
             [
                 'code' => 'tiki',
-                'title' => 'Citra Van Tititpan Kilat'
-            ]
+                'title' => 'Citra Van Titipan Kilat',
+            ],
         ]);
     }
 }

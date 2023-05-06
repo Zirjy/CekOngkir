@@ -15,14 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('/home');
-// });
+
 
 Auth::routes();
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/api/province/{id}/citys', [HomeController::class, 'getCitys']);
-
-Route::post('/store', [HomeController::class, 'store'])->name('store');
-Route::post('/api/citys', [HomeController::class, 'searchCitys']);
+Route::get('/',[HomeController::class, 'index'])->name('home');
+Route::get('/api/province/{id}/cities',[HomeController::class, 'getCities']);
+Route::post('/store',[HomeController::class, 'store'])->name('store');
+Route::post('/api/cities',[HomeController::class, 'searchCities']);

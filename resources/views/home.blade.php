@@ -66,14 +66,14 @@
                 <h4 class="my-0 font-weight-normal">Formulir Cek Ongkir</h4>
             </div>
             <div class="card-body">
-                <form action="{{ route('store')}}" method="POST">
+                <form action="{{route('store')}}" method="POST">
                     @csrf
                     <div class="form-row">
                         <div class="col">
                             <h5 class="text-muted">Asal Pengirim:</h5>
                             <div class="form-group">
                                 <label for="">Provinsi</label>
-                                <select name="province_origin" id="" class="form-control">
+                                <select name="province_origin" id="province_origin" class="form-control">
                                     <option value="">-</option>
                                     @foreach ($province as $key => $value)
                                     <option value="{{$key}}">{{$value}}</option>
@@ -83,7 +83,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Kota/Kabupaten</label>
-                                <select name="city_origin" id="" class="form-control">
+                                <select name="city_origin" id="city_origin" class="form-control">
                                     <option value="">-</option>
                                 </select>
                             </div>
@@ -91,7 +91,7 @@
                             <div class="form-group">
                                 <label for="">Kota/Kabupaten</label>
                                 <select name="destination" id="destination" class="form-control">
-                                    <option value="#">-</option>
+                                    <option value="">-</option>
                                 </select>
                             </div>
                         </div>
@@ -99,8 +99,8 @@
                             <h5 class="text-muted">Pilih Expedisi:</h5>
                             @foreach ($courier as $key => $value)
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="{{$key}}" name="courier[]" value="{{$value}}">
-                                <label class="form-check-label" for="{{ $key }}">{{ $value->title }}</label>
+                                <input class="form-check-input" type="checkbox" id="{{$key}}" name="courier[]" value="{{$value->code}}">
+                                <label class="form-check-label" for="{{$key}}">{{$value -> title}}</label>
                             </div>
                             @endforeach
                         </div>
